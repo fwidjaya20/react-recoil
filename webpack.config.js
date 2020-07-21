@@ -9,7 +9,7 @@ const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
     name: "web",
-    entry: "./app/web/src/index.ts",
+    entry: "./app/web/src/index.tsx",
     output: {
         path: path.join(__dirname, "/dist/web"),
         filename: NODE_ENV === "production" 
