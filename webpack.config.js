@@ -3,6 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const PUBLIC_PATH = process.env.PUBLIC_PATH;
 const NODE_ENV = process.env.NODE_ENV;
@@ -36,6 +37,42 @@ module.exports = {
                 exclude: [/node_modules/],
                 use: ['ts-loader'],
             },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
+            {
+                test: /\.(jpg|png|jpeg|svg)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        outputPath: 'images',
+                        name: '[name]-[hash].[ext]',
+                    },
+                },
+            },
+            {
+                test: /\.(woff|woff2|ttf|otf|eot)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'fonts',
+                            name: '[name]-[hash].[ext]',
+                        },
+                    },
+                ],
+            },
+            {
+                test: /favicon\.ico$/,
+                use: '[name].[ext]',
+            },
         ]
     },
     plugins: [
@@ -46,6 +83,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, "public", "index.html"),
             minify: true
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].[hash].css",
+            ignoreOrder: false
         })
     ],
     devServer: {
