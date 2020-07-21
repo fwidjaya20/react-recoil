@@ -1,0 +1,24 @@
+{
+  "name": "react-recoil",
+  "version": "1.0.0",
+  "description": "ReactTS with Recoil State Management",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ReactJS",
+    "ReactTS",
+    "Type Script",
+    "Recoil",
+    "State Management",
+    "Webpack"
+  ],
+  "author": "Fredrick Widjaya",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "ts-loader": "^8.0.1",
+    "typescript": "^3.9.7"
+  }
+}
