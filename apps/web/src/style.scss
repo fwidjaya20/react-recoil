@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
 @import "~tailwindcss/dist/tailwind.min.css";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import "styles/variable";
+@import "styles/component";
 
 html,
 body {
@@ -8,4 +11,6 @@ body {
   padding: 0;
   margin: 0;
   background-color: $white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
 }

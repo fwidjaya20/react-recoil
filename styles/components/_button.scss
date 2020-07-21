@@ -1,0 +1,13 @@
+button {
+  &.btn-primary {
+    height: 44px !important;
+    background-color: $primary;
+    color: $white;
+    border-color: $darken;
+
+    &:hover {
+      border-color: $darken !important;
+      background-color: $darken !important;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../../../../styles/variable';
+
+.landing-top-bar {
+  position: relative;
+  background-color: $primary;
+  padding: 76px 16px;
+
+  .logo {
+    position: relative;
+    display: block;
+
+    > img {
+      width: 128px;
+      height: 128px;
+      object-fit: contain;
+    }
+  }
+}
+
+.landing-top-bar + section:last-of-type {
+  margin-bottom: 32px;
+}
+
+.landing-form {
+  position: relative;
+  margin: -72px auto 32px;
+  padding: 32px 24px;
+}
+
+.landing-box {
+  border-radius: $box-radius;
+  -webkit-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+  background-color: #ffffff;
+}

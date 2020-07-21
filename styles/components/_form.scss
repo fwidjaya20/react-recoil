@@ -1,0 +1,15 @@
+.form-field {
+  background-color: $soft-gray !important;
+  border-color: $input-border-color;
+  height: 44px;
+
+  &:hover,
+  &:focus {
+    border-color: $primary !important;
+  }
+
+  &:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
