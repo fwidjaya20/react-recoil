@@ -3,7 +3,7 @@ const path = require("path");
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 
 const PUBLIC_PATH = process.env.PUBLIC_PATH;
 const NODE_ENV = process.env.NODE_ENV;
@@ -41,9 +41,8 @@ module.exports = {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader,
+                        loader: MiniCSSExtractPlugin.loader,
                     },
-                    "style-loader",
                     "css-loader",
                     "sass-loader"
                 ]
@@ -85,7 +84,7 @@ module.exports = {
             template: path.resolve(__dirname, "public", "index.html"),
             minify: true
         }),
-        new MiniCssExtractPlugin({
+        new MiniCSSExtractPlugin({
             filename: "[name].[hash].css",
             ignoreOrder: false
         })
