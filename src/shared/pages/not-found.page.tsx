@@ -5,8 +5,8 @@ import '@skeleton/shared/pages/style.scss';
 class NotFoundPage extends Component<any, any> {
     render() {
         return (
-            <section className="container">
-                <div className="landing-form landing-box col-lg-6 col-md-10 col-sm-12 col-xs-12">
+            <section className="container grid grid-cols-1 mx-auto">
+                <div className="landing-form landing-box">
                     <div className="landing-box logo">
                         <i className="fa fa-exclamation-triangle" />
                     </div>
