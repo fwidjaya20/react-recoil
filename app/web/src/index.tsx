@@ -3,6 +3,6 @@ import * as ReactDOM from "react-dom";
 import "./style.scss";
 
 ReactDOM.render(
-    <div> Hello World </div>,
+    <div className="container mx-auto"> Hello World </div>,
     document.getElementById("root")
 );
