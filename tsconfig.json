@@ -14,10 +14,7 @@
     "moduleResolution": "node",
     "module": "esnext",
     "paths": {
-      "@web/*": ["apps/web/src/*"],
-      "@cores/*": ["src/cores/*"],
-      "@domains/*": ["src/domains/*"],
-      "@shared/*": ["src/shared/*"]
+      "@skeleton/web/*": ["apps/web/src/*"]
     },
     "sourceMap": true,
     "target": "es5"

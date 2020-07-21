@@ -10,7 +10,7 @@ const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
     name: "web",
-    entry: "./app/web/src/index.tsx",
+    entry: "./apps/web/src/index.tsx",
     output: {
         path: path.join(__dirname, "/dist/web"),
         filename: NODE_ENV === "production" 
@@ -22,12 +22,9 @@ module.exports = {
         publicPath: PUBLIC_PATH
     },
     resolve: {
-        extensions: [".js", ".ts", ".tsx"],
+        extensions: [".js", ".ts", ".tsx", ".scss"],
         alias: {
-            "@web": path.resolve(__dirname, "apps", "web", "src"),
-            "@cores": path.resolve(__dirname, "src", "cores"),
-            "@domains": path.resolve(__dirname, "src", "domains"),
-            "@shared": path.resolve(__dirname, "src", "shared"),
+            "@skeleton/web": path.resolve(__dirname, "apps", "web", "src"),
         }
     },
     module: {
