@@ -91,6 +91,7 @@ module.exports = {
     ],
     devServer: {
         hot: false,
-        publicPath: PUBLIC_PATH
+        publicPath: PUBLIC_PATH,
+        historyApiFallback: true
     }
 };
