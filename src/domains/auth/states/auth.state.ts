@@ -6,7 +6,7 @@ export interface AuthState {
     isLoading: boolean;
 }
 
-const authState = atom<AuthState>({
+export const AUTH_STATE = atom<AuthState>({
     key: "AUTH_STATE",
     default: {
         authUser: null,

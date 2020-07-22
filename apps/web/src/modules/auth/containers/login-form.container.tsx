@@ -1,46 +1,35 @@
-import React, {PureComponent, Fragment, createRef, RefObject} from "react";
+import React, {Fragment, createRef, RefObject} from "react";
 import LoginForm from "@skeleton/web/modules/auth/components/login.form";
 import FormValue from "@skeleton/core/form/contracts/form-value.contract";
 import LoginDto from "@skeleton/domain/auth/models/dtos/login.dto";
 import { withRouter } from 'react-router-dom';
+import {AuthLoginService} from "@skeleton/domain/auth/services/auth.service";
 
-class LoginFormContainer extends PureComponent<any, any> {
-    private readonly loginForm: RefObject<any>;
+const LoginFormContainer = (props: any) => {
+    const loginForm: RefObject<any> = createRef<any>();
 
-    constructor(props) {
-        super(props);
-        this.loginForm = createRef<any>();
+    const handleOnSignUp = async () => {
+        const result: FormValue<LoginDto> = loginForm.current.submit();
+
+        const res = await AuthLoginService(result.data);
+
+        console.log(result, res);
     }
 
-    render() {
-        return (
-            <Fragment>
-                <LoginForm formRef={this.loginForm} />
+    return (
+        <Fragment>
+            <LoginForm formRef={loginForm} />
 
-                <div>
-                    <button
-                        className="w-full btn-primary font-bold py-2 px-4 rounded"
-                        type="button"
-                        onClick={this.handleOnSignUp}>
-                        Sign Up
-                    </button>
-                </div>
-            </Fragment>
-        )
-    }
-
-    handleOnSignUp = () => {
-        const result: FormValue<LoginDto> = this.loginForm.current.submit();
-
-        if (result.status) {
-            /**
-             * TODO :
-             * 1. Simulate Hit API
-             * 2. Save API response to Recoil State Management
-             */
-            this.props.history.replace("/");
-        }
-    }
+            <div>
+                <button
+                    className="w-full btn-primary font-bold py-2 px-4 rounded"
+                    type="button"
+                    onClick={handleOnSignUp}>
+                    Sign Up
+                </button>
+            </div>
+        </Fragment>
+    );
 }
 
 export default withRouter(LoginFormContainer);
